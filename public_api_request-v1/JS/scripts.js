@@ -18,17 +18,73 @@ fetchData('https://randomuser.me/api/?results=12')
         const employees = data.results;
         generateEmployeeCard(employees);
         const cards = document.querySelectorAll('.card');
-        cards.forEach((each, i) => {
-            each.addEventListener('click', (e) => {
-                generateEmployeeProfile(employees[i]);
-
-            });
-        })
+        clickHandler(employees, cards);
 
     });
 
+function clickHandler(employees, cards) {
+    cards.forEach((each, i) => {
+        each.addEventListener('click', () => {
+            generateEmployeeProfile(employees[i]);
+            nextButton(i, employees);
+            console.log('button card clicked')
+        });
+
+    })
+}
+
+function buttonMarkup() {
+    const modalButtonsMarkup = `<div class="modal-btn-container">
+            <button type="button" id="modal-prev" class="modal-prev btn">Prev</button>
+            <button type="button" id="modal-next" class="modal-next btn">Next</button>
+            </div>
+        </div>`;
+    $('.modal-container').append(modalButtonsMarkup);
+}
 
 
+function nextButton(index, employees) {
+
+    const nextButton = document.querySelector('.modal-next');
+    if (index < 11) {
+        console.log(employees[index])
+
+        nextButton.addEventListener('click', () => {
+
+            console.log(index)
+            $('.modal-container').remove();
+            $('modal-btn-container').remove();
+            generateEmployeeProfile(employees[index + 1])
+
+
+
+
+            console.log('next button card clicked')
+            console.log(employees[index + 1])
+            console.log(index + 1)
+
+        });
+
+    }
+}
+
+function prevButton(index, employees) {
+    const prevButton = document.querySelector('.modal-prev');
+    if (index > 0) {
+        prevButton.addEventListener('click', () => {
+
+            const prevCard = employees[index - 1];
+            $('.modal-container').remove();
+            generateEmployeeProfile(prevCard)
+
+            console.log()
+
+        });
+    } else {
+        prevButton.remove();
+    }
+
+}
 /** Helper Functions */
 
 function checkStatus(response) {
@@ -76,34 +132,13 @@ function generateEmployeeProfile(employee) {
     </div>`;
 
     $('body').append(modalMarkup);
-    nextPrevButtons($('.card'));
+    buttonMarkup();
     $('.modal button').click((e) => {
         e.target = $('.modal-container').remove();
     });
 }
 
-function nextPrevButtons(employee) {
-    const modalButtonsMarkup = `<div class="modal-btn-container">
-        <button type="button" id="modal-prev" class="modal-prev btn">Prev</button>
-        <button type="button" id="modal-next" class="modal-next btn">Next</button>
-        </div>
-    </div>`;
-    $('.modal-container').append(modalButtonsMarkup);
-    const prevButton = document.querySelector('.modal-prev');
-    const nextButton = document.querySelector('.modal-next');
-    const cards = document.querySelectorAll('.card');
-    console.log(cards.length)
 
-    console.log(employee)
-    prevButton.addEventListener('click', (e) => {
-
-        console.log(cards.length - 1)
-    });
-    nextButton.addEventListener('click', (e) => {
-        console.log(cards.length + 1)
-    });
-
-}
 
 function appendSearchBar() {
     const searchMarkup = `<form action="#" method="get">
