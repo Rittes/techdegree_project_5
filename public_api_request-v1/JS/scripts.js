@@ -17,8 +17,7 @@ fetchData('https://randomuser.me/api/?results=12')
     .then(data => {
         const employees = data.results;
         generateEmployeeCard(employees);
-        const cards = document.querySelectorAll('.card');
-        clickHandler(employees, cards);
+        clickHandler(employees);
 
     });
 
@@ -36,7 +35,8 @@ function checkStatus(response) {
 
 // handles the card clicks and displays modal div for the selected card
 
-function clickHandler(employees, cards) {
+function clickHandler(employees) {
+    const cards = document.querySelectorAll('.card');
     cards.forEach((each, i) => {
         each.addEventListener('click', () => {
             generateEmployeeProfile(employees[i]);
