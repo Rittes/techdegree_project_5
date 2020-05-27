@@ -1,11 +1,6 @@
 /** Global Variables */
 const $searchContainer = $('.search-container');
 const $gallery = $('.gallery');
-const banner = document.createElement('div');
-banner.className = 'banner';
-banner.append('.header-text-container');
-banner.style.background = 'purple';
-console.log(banner)
 appendSearchBar();
 
 /** Fetch Functions */
