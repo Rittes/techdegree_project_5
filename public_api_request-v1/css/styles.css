@@ -31,7 +31,8 @@ header {
 header h1 {
     font-size: 1.25em;
     color: rgba(50, 50, 50, 0.9);
-    margin-top: 35px;
+    margin-top: 22px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .search-input {
@@ -91,7 +92,7 @@ header h1 {
     max-width: 360px;
     margin: 10px 10px 20px;
     padding: 10px;
-    background: rgb(247, 242, 223);
+    background: rgb(247, 233, 203);
     border-radius: 0.25em;
     border: 1px solid rgba(50, 50, 50, 0.3);
     transition: .4s ease-out;
@@ -145,7 +146,7 @@ header h1 {
     min-height: 415px;
     margin: 10px auto auto;
     padding-bottom: 15px;
-    background: rgb(243, 241, 229);
+    background: rgb(247, 233, 203);
     border-radius: 0.25em;
     border: 1px solid rgba(100, 100, 100, 0.3);
     transition: .4s ease-out;
@@ -195,7 +196,7 @@ header h1 {
     padding: 10px 15px 15px;
     ;
     margin: 10px auto auto;
-    background: rgb(243, 241, 229);
+    background: rgb(247, 233, 203);
     border-radius: 0.25em;
     border: 1px solid rgba(100, 100, 100, 0.3);
 }
@@ -223,7 +224,7 @@ header h1 {
    Tablet
 ======================================== */
 
-@media (min-width: 768px) {
+@media (min-width: 765px) {
     .header-inner-container {
         display: flex;
         flex-direction: row;
@@ -241,6 +242,10 @@ header h1 {
     .modal {
         margin-top: 100px;
     }
+    header h1 {
+        font-size: 1.55em;
+        margin-top: 22px;
+    }
 }
 
 
@@ -251,7 +256,7 @@ header h1 {
 
 @media (min-width: 1024px) {
     .card:hover {
-        background: rgb(253, 252, 249);
+        background: rgb(243, 241, 229);
         border: 1px solid rgba(50, 50, 50, 0.9);
     }
     .card:hover .card-text {
