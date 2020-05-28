@@ -20,11 +20,11 @@ body {
 }
 
 header {
-    padding: 15px 5px 5px;
+    padding: 15px 5px 15px;
 }
 
 .header-inner-container {
-    max-width: 1180px;
+    max-width: 1380px;
     margin: auto;
 }
 
@@ -92,7 +92,7 @@ header h1 {
     max-width: 360px;
     margin: 10px 10px 20px;
     padding: 10px;
-    background: rgb(247, 233, 203);
+    background: rgba(247, 233, 203, 0.918);
     border-radius: 0.25em;
     border: 1px solid rgba(50, 50, 50, 0.3);
     transition: .4s ease-out;
@@ -132,7 +132,7 @@ header h1 {
 
 .modal-container {
     position: fixed;
-    top: 0;
+    top: -30;
     right: 0;
     bottom: 0;
     left: 0;
@@ -145,8 +145,8 @@ header h1 {
     max-width: 420px;
     min-height: 415px;
     margin: 10px auto auto;
-    padding-bottom: 15px;
-    background: rgb(247, 233, 203);
+    padding-bottom: 10px;
+    background: rgb(245, 235, 214);
     border-radius: 0.25em;
     border: 1px solid rgba(100, 100, 100, 0.3);
     transition: .4s ease-out;
@@ -194,9 +194,8 @@ header h1 {
     width: 95%;
     max-width: 420px;
     padding: 10px 15px 15px;
-    ;
     margin: 10px auto auto;
-    background: rgb(247, 233, 203);
+    background: rgb(245, 235, 214);
     border-radius: 0.25em;
     border: 1px solid rgba(100, 100, 100, 0.3);
 }
@@ -256,7 +255,7 @@ header h1 {
 
 @media (min-width: 1024px) {
     .card:hover {
-        background: rgb(243, 241, 229);
+        background: rgb(248, 246, 237);
         border: 1px solid rgba(50, 50, 50, 0.9);
     }
     .card:hover .card-text {

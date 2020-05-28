@@ -18,6 +18,7 @@ fetchData('https://randomuser.me/api/?results=12')
         clickHandler(employees);
     });
 
+
 /** Helper Functions */
 
 function checkStatus(response) {
@@ -40,7 +41,7 @@ function clickHandler(employees) {
 }
 
 
-// Buttons functionality to switch between modals
+// Button functionality to switch between modals
 
 function nextButton(employees, index) {
     let nextModal = index + 1;
@@ -70,7 +71,8 @@ function prevButton(employees, index) {
     }
 }
 
-// This function recieves data and displays employee info on a div
+// This function recieves data and displays employee info on a div,
+// and adds functionality to the 'X' button
 
 function generateEmployeeProfile(employees, index) {
     const employee = employees[index];
@@ -132,9 +134,6 @@ function searchBar(input) {
         if (input === '') {
             employee.style.display = '';
         }
-
-
-
     });
 }
 
@@ -156,7 +155,6 @@ function buttonMarkup() {
 }
 
 /** Event Listeners */
-
 const searchInput = document.querySelector('.search-input');
 searchInput.addEventListener('keyup', (e) => {
     e.preventDefault;
